@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: e12513485176a3b4d827f42df6ff3abf
+timeCreated: 1541164848
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Footsteps
+    100004: Bip001 Head
+    100006: Bip001 HeadNub
+    100008: Bip001 L Calf
+    100010: Bip001 L Clavicle
+    100012: Bip001 L Foot
+    100014: Bip001 L Forearm
+    100016: Bip001 L Hand
+    100018: Bip001 L HorseLink
+    100020: Bip001 L Thigh
+    100022: Bip001 L Toe0
+    100024: Bip001 L Toe0Nub
+    100026: Bip001 L UpperArm
+    100028: Bip001 Neck
+    100030: Bip001 Pelvis
+    100032: Bip001 R Calf
+    100034: Bip001 R Clavicle
+    100036: Bip001 R Foot
+    100038: Bip001 R Forearm
+    100040: Bip001 R Hand
+    100042: Bip001 R HorseLink
+    100044: Bip001 R Thigh
+    100046: Bip001 R Toe0
+    100048: Bip001 R Toe0Nub
+    100050: Bip001 R UpperArm
+    100052: Bip001 Spine
+    100054: Bip001 Spine1
+    100056: EarBoneL01
+    100058: EarBoneL02
+    100060: EarBoneLend
+    100062: EarBoneR01
+    100064: EarBoneR02
+    100066: EarBoneRend
+    100068: EyeBallBoneL
+    100070: EyeBallBoneLend
+    100072: EyeBallBoneR
+    100074: EyeBallBoneRend
+    100076: EyeleadBoneL01
+    100078: EyeleadBoneL02
+    100080: EyeleadBoneLend01
+    100082: EyeleadBoneLend02
+    100084: EyeleadBoneR01
+    100086: EyeleadBoneR02
+    100088: EyeleadBoneRend01
+    100090: EyeleadBoneRend02
+    100092: FingerBoneL01
+    100094: FingerBoneL02
+    100096: FingerBoneL03
+    100098: FingerBoneL04
+    100100: FingerBoneL05
+    100102: FingerBoneL06
+    100104: FingerBoneL07
+    100106: FingerBoneL08
+    100108: FingerBoneL09
+    100110: FingerBoneL10
+    100112: FingerBoneL11
+    100114: FingerBoneL12
+    100116: FingerBoneL13
+    100118: FingerBoneL14
+    100120: FingerBoneL15
+    100122: FingerBoneLend01
+    100124: FingerBoneLend02
+    100126: FingerBoneLend03
+    100128: FingerBoneLend04
+    100130: FingerBoneLend05
+    100132: FingerBoneR01
+    100134: FingerBoneR02
+    100136: FingerBoneR03
+    100138: FingerBoneR04
+    100140: FingerBoneR05
+    100142: FingerBoneR06
+    100144: FingerBoneR07
+    100146: FingerBoneR08
+    100148: FingerBoneR09
+    100150: FingerBoneR10
+    100152: FingerBoneR11
+    100154: FingerBoneR12
+    100156: FingerBoneR13
+    100158: FingerBoneR14
+    100160: FingerBoneR15
+    100162: FingerBoneRend01
+    100164: FingerBoneRend02
+    100166: FingerBoneRend03
+    100168: FingerBoneRend04
+    100170: FingerBoneRend05
+    100172: JawBoneDown01
+    100174: JawBoneDown02
+    100176: JawBoneDown03
+    100178: JawBoneDown04
+    100180: JawBoneDownend
+    100182: JawBoneUP01
+    100184: JawBoneUP02
+    100186: JawBoneUPend
+    100188: TailBone01
+    100190: TailBone02
+    100192: TailBone03
+    100194: TailBone04
+    100196: TailBoneend
+    100198: Wolf
+    100200: //RootNode
+    400000: Bip001
+    400002: Bip001 Footsteps
+    400004: Bip001 Head
+    400006: Bip001 HeadNub
+    400008: Bip001 L Calf
+    400010: Bip001 L Clavicle
+    400012: Bip001 L Foot
+    400014: Bip001 L Forearm
+    400016: Bip001 L Hand
+    400018: Bip001 L HorseLink
+    400020: Bip001 L Thigh
+    400022: Bip001 L Toe0
+    400024: Bip001 L Toe0Nub
+    400026: Bip001 L UpperArm
+    400028: Bip001 Neck
+    400030: Bip001 Pelvis
+    400032: Bip001 R Calf
+    400034: Bip001 R Clavicle
+    400036: Bip001 R Foot
+    400038: Bip001 R Forearm
+    400040: Bip001 R Hand
+    400042: Bip001 R HorseLink
+    400044: Bip001 R Thigh
+    400046: Bip001 R Toe0
+    400048: Bip001 R Toe0Nub
+    400050: Bip001 R UpperArm
+    400052: Bip001 Spine
+    400054: Bip001 Spine1
+    400056: EarBoneL01
+    400058: EarBoneL02
+    400060: EarBoneLend
+    400062: EarBoneR01
+    400064: EarBoneR02
+    400066: EarBoneRend
+    400068: EyeBallBoneL
+    400070: EyeBallBoneLend
+    400072: EyeBallBoneR
+    400074: EyeBallBoneRend
+    400076: EyeleadBoneL01
+    400078: EyeleadBoneL02
+    400080: EyeleadBoneLend01
+    400082: EyeleadBoneLend02
+    400084: EyeleadBoneR01
+    400086: EyeleadBoneR02
+    400088: EyeleadBoneRend01
+    400090: EyeleadBoneRend02
+    400092: FingerBoneL01
+    400094: FingerBoneL02
+    400096: FingerBoneL03
+    400098: FingerBoneL04
+    400100: FingerBoneL05
+    400102: FingerBoneL06
+    400104: FingerBoneL07
+    400106: FingerBoneL08
+    400108: FingerBoneL09
+    400110: FingerBoneL10
+    400112: FingerBoneL11
+    400114: FingerBoneL12
+    400116: FingerBoneL13
+    400118: FingerBoneL14
+    400120: FingerBoneL15
+    400122: FingerBoneLend01
+    400124: FingerBoneLend02
+    400126: FingerBoneLend03
+    400128: FingerBoneLend04
+    400130: FingerBoneLend05
+    400132: FingerBoneR01
+    400134: FingerBoneR02
+    400136: FingerBoneR03
+    400138: FingerBoneR04
+    400140: FingerBoneR05
+    400142: FingerBoneR06
+    400144: FingerBoneR07
+    400146: FingerBoneR08
+    400148: FingerBoneR09
+    400150: FingerBoneR10
+    400152: FingerBoneR11
+    400154: FingerBoneR12
+    400156: FingerBoneR13
+    400158: FingerBoneR14
+    400160: FingerBoneR15
+    400162: FingerBoneRend01
+    400164: FingerBoneRend02
+    400166: FingerBoneRend03
+    400168: FingerBoneRend04
+    400170: FingerBoneRend05
+    400172: JawBoneDown01
+    400174: JawBoneDown02
+    400176: JawBoneDown03
+    400178: JawBoneDown04
+    400180: JawBoneDownend
+    400182: JawBoneUP01
+    400184: JawBoneUP02
+    400186: JawBoneUPend
+    400188: TailBone01
+    400190: TailBone02
+    400192: TailBone03
+    400194: TailBone04
+    400196: TailBoneend
+    400198: Wolf
+    400200: //RootNode
+    2100000: 'Material #25'
+    4300000: Wolf
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Wolf
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
+      in configuration does not match rotation in animation file:\n\t'Bip001 L HorseLink'
+      : rotation error = 78.924980 deg\n\t'Bip001 R HorseLink' : rotation error =
+      46.128067 deg\n"
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\n\t'Bip001 L HorseLink' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Bip001 R HorseLink'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

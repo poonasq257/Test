@@ -1,0 +1,504 @@
+fileFormatVersion: 2
+guid: f761fdc7a1c904d439045b82891989b1
+timeCreated: 1541164849
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Footsteps
+    100004: Bip001 Head
+    100006: Bip001 HeadNub
+    100008: Bip001 L Calf
+    100010: Bip001 L Clavicle
+    100012: Bip001 L Foot
+    100014: Bip001 L Forearm
+    100016: Bip001 L ForeTwist
+    100018: Bip001 L ForeTwist1
+    100020: Bip001 L Hand
+    100022: Bip001 L Thigh
+    100024: Bip001 L Toe0
+    100026: Bip001 L Toe0Nub
+    100028: Bip001 L UpperArm
+    100030: Bip001 LUpArmTwist
+    100032: Bip001 LUpArmTwist1
+    100034: Bip001 Neck
+    100036: Bip001 Pelvis
+    100038: Bip001 R Calf
+    100040: Bip001 R Clavicle
+    100042: Bip001 R Foot
+    100044: Bip001 R Forearm
+    100046: Bip001 R ForeTwist
+    100048: Bip001 R ForeTwist1
+    100050: Bip001 R Hand
+    100052: Bip001 R Thigh
+    100054: Bip001 R Toe0
+    100056: Bip001 R Toe0Nub
+    100058: Bip001 R UpperArm
+    100060: Bip001 RUpArmTwist
+    100062: Bip001 RUpArmTwist1
+    100064: Bip001 Spine
+    100066: Bip001 Spine1
+    100068: Bone005
+    100070: Bone005(mirrored)
+    100072: Bone010
+    100074: Bone010(mirrored)
+    100076: Bone013
+    100078: Bone016
+    100080: Bone019
+    100082: Bone022
+    100084: Bone025
+    100086: Bone028
+    100088: Bone030
+    100090: Box004
+    100092: Circle001
+    100094: Circle002
+    100096: Circle003
+    100098: Cylinder001
+    100100: Cylinder002
+    100102: EyeboneL
+    100104: EyeBoneLD01
+    100106: EyeBoneLDend
+    100108: EyeboneLend
+    100110: EyeBoneLU01
+    100112: EyeBoneLUend
+    100114: EyeboneR
+    100116: EyeBoneRD01
+    100118: EyeBoneRDend
+    100120: EyeboneRend
+    100122: EyeBoneRU01
+    100124: EyeBoneRUend
+    100126: EyeleadBoneL01
+    100128: EyeleadBoneL02
+    100130: EyeleadBoneL03
+    100132: EyeleadBoneL04
+    100134: EyeleadBoneLend
+    100136: EyeleadBoneR01
+    100138: EyeleadBoneR02
+    100140: EyeleadBoneR03
+    100142: EyeleadBoneR04
+    100144: EyeleadBoneRend
+    100146: facialbone01
+    100148: facialbone02
+    100150: facialbone03
+    100152: facialbone04
+    100154: facialbone05
+    100156: facialbone06
+    100158: facialbone07
+    100160: facialbone08
+    100162: facialbone09
+    100164: facialbone10
+    100166: facialbone11
+    100168: facialbone12
+    100170: facialbone13
+    100172: facialbone14
+    100174: facialboneL01
+    100176: facialboneL02
+    100178: facialboneL03
+    100180: facialboneL04
+    100182: facialboneL05
+    100184: facialboneL06
+    100186: facialboneL07
+    100188: facialboneL08
+    100190: facialboneL09
+    100192: facialboneL10
+    100194: facialboneL11
+    100196: facialboneL12
+    100198: facialboneL13
+    100200: facialboneL14
+    100202: FingerBoneL01
+    100204: FingerBoneL02
+    100206: FingerBoneL03
+    100208: FingerBoneL04
+    100210: FingerBoneL05
+    100212: FingerBoneL06
+    100214: FingerBoneL07
+    100216: FingerBoneL08
+    100218: FingerBoneL09
+    100220: FingerBoneL10
+    100222: FingerBoneL11
+    100224: FingerBoneL12
+    100226: FingerBoneL13
+    100228: FingerBoneL14
+    100230: FingerBoneL15
+    100232: FingerBoneLend01
+    100234: FingerBoneLend02
+    100236: FingerBoneLend03
+    100238: FingerBoneLend04
+    100240: FingerBoneLend05
+    100242: FingerBoneR01
+    100244: FingerBoneR02
+    100246: FingerBoneR03
+    100248: FingerBoneR04
+    100250: FingerBoneR05
+    100252: FingerBoneR06
+    100254: FingerBoneR07
+    100256: FingerBoneR08
+    100258: FingerBoneR09
+    100260: FingerBoneR10
+    100262: FingerBoneR11
+    100264: FingerBoneR12
+    100266: FingerBoneR13
+    100268: FingerBoneR14
+    100270: FingerBoneR15
+    100272: FingerBoneRend01
+    100274: FingerBoneRend02
+    100276: FingerBoneRend03
+    100278: FingerBoneRend04
+    100280: FingerBoneRend05
+    100282: GunPoint
+    100284: GunPoint2
+    100286: //RootNode
+    100288: Jawbone
+    100290: Object001
+    100292: Object002
+    100294: Point012
+    100296: Point013
+    100298: Point014
+    100300: Point015
+    100302: Point016
+    100304: Point017
+    100306: Point018
+    100308: Point019
+    100310: Point020
+    100312: Point021
+    100314: Point022
+    100316: Point023
+    100318: Point024
+    100320: Point027
+    100322: Point028
+    100324: Point029
+    100326: Point030
+    100328: Point031
+    100330: Point032
+    100332: Point033
+    100334: Point034
+    100336: Point035
+    100338: Point036
+    100340: Point037
+    100342: Point038
+    100344: Point039
+    100346: Point040
+    100348: Point041
+    100350: Point042
+    100352: Point043
+    100354: Point044
+    100356: Point045
+    100358: Point046
+    100360: Point047
+    100362: Point048
+    100364: Point049
+    100366: Point050
+    100368: Point051
+    100370: Point052
+    100372: Point053
+    100374: Point054
+    100376: Point055
+    100378: Point056
+    100380: Point057
+    100382: Point058
+    100384: Point059
+    100386: Point060
+    100388: Point061
+    100390: Point062
+    100392: Point063
+    100394: Point064
+    100396: Point065
+    400000: Bip001
+    400002: Bip001 Footsteps
+    400004: Bip001 Head
+    400006: Bip001 HeadNub
+    400008: Bip001 L Calf
+    400010: Bip001 L Clavicle
+    400012: Bip001 L Foot
+    400014: Bip001 L Forearm
+    400016: Bip001 L ForeTwist
+    400018: Bip001 L ForeTwist1
+    400020: Bip001 L Hand
+    400022: Bip001 L Thigh
+    400024: Bip001 L Toe0
+    400026: Bip001 L Toe0Nub
+    400028: Bip001 L UpperArm
+    400030: Bip001 LUpArmTwist
+    400032: Bip001 LUpArmTwist1
+    400034: Bip001 Neck
+    400036: Bip001 Pelvis
+    400038: Bip001 R Calf
+    400040: Bip001 R Clavicle
+    400042: Bip001 R Foot
+    400044: Bip001 R Forearm
+    400046: Bip001 R ForeTwist
+    400048: Bip001 R ForeTwist1
+    400050: Bip001 R Hand
+    400052: Bip001 R Thigh
+    400054: Bip001 R Toe0
+    400056: Bip001 R Toe0Nub
+    400058: Bip001 R UpperArm
+    400060: Bip001 RUpArmTwist
+    400062: Bip001 RUpArmTwist1
+    400064: Bip001 Spine
+    400066: Bip001 Spine1
+    400068: Bone005
+    400070: Bone005(mirrored)
+    400072: Bone010
+    400074: Bone010(mirrored)
+    400076: Bone013
+    400078: Bone016
+    400080: Bone019
+    400082: Bone022
+    400084: Bone025
+    400086: Bone028
+    400088: Bone030
+    400090: Box004
+    400092: Circle001
+    400094: Circle002
+    400096: Circle003
+    400098: Cylinder001
+    400100: Cylinder002
+    400102: EyeboneL
+    400104: EyeBoneLD01
+    400106: EyeBoneLDend
+    400108: EyeboneLend
+    400110: EyeBoneLU01
+    400112: EyeBoneLUend
+    400114: EyeboneR
+    400116: EyeBoneRD01
+    400118: EyeBoneRDend
+    400120: EyeboneRend
+    400122: EyeBoneRU01
+    400124: EyeBoneRUend
+    400126: EyeleadBoneL01
+    400128: EyeleadBoneL02
+    400130: EyeleadBoneL03
+    400132: EyeleadBoneL04
+    400134: EyeleadBoneLend
+    400136: EyeleadBoneR01
+    400138: EyeleadBoneR02
+    400140: EyeleadBoneR03
+    400142: EyeleadBoneR04
+    400144: EyeleadBoneRend
+    400146: facialbone01
+    400148: facialbone02
+    400150: facialbone03
+    400152: facialbone04
+    400154: facialbone05
+    400156: facialbone06
+    400158: facialbone07
+    400160: facialbone08
+    400162: facialbone09
+    400164: facialbone10
+    400166: facialbone11
+    400168: facialbone12
+    400170: facialbone13
+    400172: facialbone14
+    400174: facialboneL01
+    400176: facialboneL02
+    400178: facialboneL03
+    400180: facialboneL04
+    400182: facialboneL05
+    400184: facialboneL06
+    400186: facialboneL07
+    400188: facialboneL08
+    400190: facialboneL09
+    400192: facialboneL10
+    400194: facialboneL11
+    400196: facialboneL12
+    400198: facialboneL13
+    400200: facialboneL14
+    400202: FingerBoneL01
+    400204: FingerBoneL02
+    400206: FingerBoneL03
+    400208: FingerBoneL04
+    400210: FingerBoneL05
+    400212: FingerBoneL06
+    400214: FingerBoneL07
+    400216: FingerBoneL08
+    400218: FingerBoneL09
+    400220: FingerBoneL10
+    400222: FingerBoneL11
+    400224: FingerBoneL12
+    400226: FingerBoneL13
+    400228: FingerBoneL14
+    400230: FingerBoneL15
+    400232: FingerBoneLend01
+    400234: FingerBoneLend02
+    400236: FingerBoneLend03
+    400238: FingerBoneLend04
+    400240: FingerBoneLend05
+    400242: FingerBoneR01
+    400244: FingerBoneR02
+    400246: FingerBoneR03
+    400248: FingerBoneR04
+    400250: FingerBoneR05
+    400252: FingerBoneR06
+    400254: FingerBoneR07
+    400256: FingerBoneR08
+    400258: FingerBoneR09
+    400260: FingerBoneR10
+    400262: FingerBoneR11
+    400264: FingerBoneR12
+    400266: FingerBoneR13
+    400268: FingerBoneR14
+    400270: FingerBoneR15
+    400272: FingerBoneRend01
+    400274: FingerBoneRend02
+    400276: FingerBoneRend03
+    400278: FingerBoneRend04
+    400280: FingerBoneRend05
+    400282: GunPoint
+    400284: GunPoint2
+    400286: //RootNode
+    400288: Jawbone
+    400290: Object001
+    400292: Object002
+    400294: Point012
+    400296: Point013
+    400298: Point014
+    400300: Point015
+    400302: Point016
+    400304: Point017
+    400306: Point018
+    400308: Point019
+    400310: Point020
+    400312: Point021
+    400314: Point022
+    400316: Point023
+    400318: Point024
+    400320: Point027
+    400322: Point028
+    400324: Point029
+    400326: Point030
+    400328: Point031
+    400330: Point032
+    400332: Point033
+    400334: Point034
+    400336: Point035
+    400338: Point036
+    400340: Point037
+    400342: Point038
+    400344: Point039
+    400346: Point040
+    400348: Point041
+    400350: Point042
+    400352: Point043
+    400354: Point044
+    400356: Point045
+    400358: Point046
+    400360: Point047
+    400362: Point048
+    400364: Point049
+    400366: Point050
+    400368: Point051
+    400370: Point052
+    400372: Point053
+    400374: Point054
+    400376: Point055
+    400378: Point056
+    400380: Point057
+    400382: Point058
+    400384: Point059
+    400386: Point060
+    400388: Point061
+    400390: Point062
+    400392: Point063
+    400394: Point064
+    400396: Point065
+    2100000: 02 - Default
+    2100002: No Name
+    2300000: Cylinder001
+    2300002: Cylinder002
+    2300004: Object001
+    2300006: Object002
+    3300000: Cylinder001
+    3300002: Cylinder002
+    3300004: Object001
+    3300006: Object002
+    4300000: Box004
+    4300002: Cylinder002
+    4300004: Cylinder001
+    4300006: Object002
+    4300008: Object001
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Box004
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

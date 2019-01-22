@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 7be6b0ec655b3c642ab743c1868f45c5
+timeCreated: 1513679604
+licenseType: Store
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sans Poster Bold JL
+  fontNames:
+  - Sans Poster Bold JL
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

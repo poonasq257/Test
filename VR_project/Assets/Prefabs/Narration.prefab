@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1993279384974700}
+  m_IsPrefabParent: 1
+--- !u!1 &1993279384974700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4281657662086714}
+  - component: {fileID: 82315492035273142}
+  - component: {fileID: 114304063709483768}
+  m_Layer: 0
+  m_Name: Narration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4281657662086714
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993279384974700}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82315492035273142
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993279384974700}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114304063709483768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1993279384974700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee4c45b2097ec242997f3b03546b17e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedHouse:
+  - {fileID: 8300000, guid: bd04bee454d58b549afb4a4c0bfa63cf, type: 3}
+  - {fileID: 8300000, guid: daa6c2d83ef623c44a0400312c4ef5a9, type: 3}
+  Forest:
+  - {fileID: 8300000, guid: 721cd94d2b28b5b4b8be6139835aba3c, type: 3}
+  - {fileID: 8300000, guid: 1d4523f2283c9b140bb0ce7531ddb2df, type: 3}
+  - {fileID: 8300000, guid: 8fb84696cb897914d8f8e0d4b68ec480, type: 3}
+  - {fileID: 8300000, guid: 8a9f8862cd7a37a4493f48c41b24c408, type: 3}
+  - {fileID: 8300000, guid: 01340f55837aad04d8dbccb858536095, type: 3}
+  - {fileID: 8300000, guid: 3e81f63187b480b45876e13b995be455, type: 3}
+  - {fileID: 8300000, guid: 609652bdeeffb7a4ea059bc1677f2cd2, type: 3}
+  - {fileID: 8300000, guid: 9394d22475cb81e46b6ecd8c9119b678, type: 3}
+  - {fileID: 8300000, guid: 5b32c78460ea68e4ca71bc74017fd9af, type: 3}
+  - {fileID: 8300000, guid: c01601c5cc2dbd946aa0df9f438c75bc, type: 3}
+  - {fileID: 8300000, guid: 71baf1f6c9ee8ae468487f47b053cb8d, type: 3}
+  - {fileID: 8300000, guid: 4f1ea0b26fac0c44886c383956e55e41, type: 3}
+  - {fileID: 8300000, guid: 6243e5cf0d9b31e44a62d60c08d7976b, type: 3}
+  - {fileID: 8300000, guid: dfba368c839bfa743b1141b2ece4de8f, type: 3}
+  Forest_A:
+  - {fileID: 8300000, guid: 03cbad60c40d5df4dbbbcbd7dfd55f81, type: 3}
+  - {fileID: 8300000, guid: ef886bbcd4a05b04d9cd801be8304e9e, type: 3}
+  - {fileID: 8300000, guid: aa240da346a7ff042989be70098ac330, type: 3}
+  - {fileID: 8300000, guid: d1e05d5c2e4b8214ba3607c81c1dff9e, type: 3}
+  Forest_B:
+  - {fileID: 8300000, guid: ee358c4bda3821b4a817a269d274ed21, type: 3}
+  - {fileID: 8300000, guid: 6bb9d04fa71e8514ba1157d9dcc2ea6a, type: 3}
+  - {fileID: 8300000, guid: 61e2a5f629e12044d9f9d8928ef2c7f5, type: 3}
+  Grandma_A: []
+  Grandma_B:
+  - {fileID: 8300000, guid: 9f5833343138dc44f9258c5e7d5b1c5e, type: 3}
+  - {fileID: 8300000, guid: f33e27724af9451459e32d205b903b46, type: 3}
+  - {fileID: 8300000, guid: 22984f3b0a9968a46bfaa0b57100a1f4, type: 3}
+  - {fileID: 8300000, guid: 43a15a7b8c69cf444b88d1145df5f6c6, type: 3}
+  - {fileID: 8300000, guid: 5732b437e06cc9e469e60cbb042c97ef, type: 3}
+  - {fileID: 8300000, guid: 3d2194fb1c7b7ad4ea9d1ce22f278943, type: 3}
+  - {fileID: 8300000, guid: d39dd182d08813b4bac3938e2fc9c8d7, type: 3}
+  - {fileID: 8300000, guid: dc2745fb24f8ca14eaf683331aa1d5e3, type: 3}
+  - {fileID: 8300000, guid: 3762fd8ea863a90428f3882af95994e7, type: 3}
+  - {fileID: 8300000, guid: 3dbd92932bded9d43b36ab9bb97d1552, type: 3}
+  - {fileID: 8300000, guid: c079d874c089b51439ca0955364fb24f, type: 3}
+  - {fileID: 8300000, guid: 99f187bde31d67d40a79e7c022944b52, type: 3}
+  - {fileID: 8300000, guid: a83ea7c9e4990cf4a9654bdaa4ed848c, type: 3}
+  - {fileID: 8300000, guid: 0d90228e09a060c48bae0edd4ae39c35, type: 3}
+  - {fileID: 8300000, guid: 610b93639f024644892bc910199c33ac, type: 3}
+  - {fileID: 8300000, guid: 7b6b96684ce02e643b56dcc6b4ad677a, type: 3}
+  - {fileID: 8300000, guid: 85447634dbcf78d42bcc3018ddc4cc3c, type: 3}
+  - {fileID: 8300000, guid: d1859d542becc3f4f85598dbe1edd137, type: 3}
+  - {fileID: 8300000, guid: f77b34eeb01e75846a9a335621469ae8, type: 3}
+  Wolf_A: []
+  Wolf_B: []
+  Effects: []
