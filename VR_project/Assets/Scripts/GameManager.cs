@@ -7,6 +7,13 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
 
+    public enum GameLanguage
+    {
+        KR,
+        EN,
+    }
+
+    public GameLanguage language = GameLanguage.KR;
     public int ch = 1;
     public bool isSetting = false;
     public int whichHandGrap = 0;
@@ -20,8 +27,6 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-
-
 
         InitGame();
     }

@@ -18,6 +18,8 @@ TagManager:
   - flower
   - Rock
   - Grandma
+  - ExcludeTeleport
+  - TeleportIgnore
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - CanTeleport
+  - CanHighlight
   - 
   - 
   - 

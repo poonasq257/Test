@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GrandmaHouse.unity
     guid: 336246c1f3a6cd24780d39aaf703f736
+  - enabled: 1
+    path: Assets/Scenes/Courthouse.unity
+    guid: 1b238f06cc14afd4f9237d9dc0328308

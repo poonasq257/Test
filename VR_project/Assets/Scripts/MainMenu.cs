@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-
     public string button_name;
 
     public GameObject con_left;
@@ -15,71 +14,86 @@ public class MainMenu : MonoBehaviour {
     private TriggerManager trigger;
     private TriggerManager trigger2;
 
-    public GameObject main_play;
-    public GameObject main_Quit;
+    private enum ClickedButton
+    {
+        NONE = -1,
+        PLAY,
+        LANGUAGE,
+        QUIT,
+        FLASHBACK,
+        COURTHOUSE,
+        BACK_PLAY,
+        RED,
+        WOLF,
+        BACK_FLASHBACK,
+        KOREAN,
+        ENGLISH,
+        BACK_LANGUAGE,
+    }
 
-    public GameObject paly_red;
-    public GameObject paly_wolf;
-    public GameObject paly_back;
-
+    private ClickedButton clickedButton;
+    public GameObject[] buttons;
+    
     // Use this for initialization
     void Start () {
         trigger = con_left.GetComponent<TriggerManager>();
         trigger2 = con_right.GetComponent<TriggerManager>();
+        clickedButton = ClickedButton.NONE;
     }
 	
 	// Update is called once per frame
 	void Update () {
-
         if (trigger.IsTriggerDown || trigger2.IsTriggerDown)
         {
-            if (button_name == "PLAY")
+            switch (button_name)
             {
-                main_play.GetComponent<Button>().onClick.Invoke();
-                trigger.IsTriggerDown = false;
-                trigger2.IsTriggerDown = false;
+                case "PLAY": clickedButton = ClickedButton.PLAY; break;
+                case "LANGUAGE": clickedButton = ClickedButton.LANGUAGE; break;
+                case "QUIT": clickedButton = ClickedButton.QUIT; break;
+                case "FLASHBACK": clickedButton = ClickedButton.FLASHBACK; break;
+                case "COURTHOUSE": clickedButton = ClickedButton.COURTHOUSE; break;
+                case "BACK_PLAY": clickedButton = ClickedButton.BACK_PLAY; break;
+                case "RED": clickedButton = ClickedButton.RED; break;
+                case "WOLF": clickedButton = ClickedButton.WOLF; break;
+                case "BACK_FLASHBACK": clickedButton = ClickedButton.BACK_FLASHBACK; break;
+                case "KOREAN": clickedButton = ClickedButton.KOREAN; break;
+                case "ENGLISH": clickedButton = ClickedButton.ENGLISH; break;
+                case "BACK_LANGUAGE": clickedButton = ClickedButton.BACK_LANGUAGE; break;
+                default: clickedButton = ClickedButton.NONE; break;
             }
 
-            else if (button_name == "QUIT")
-            {
-                main_Quit.GetComponent<Button>().onClick.Invoke();
-                trigger.IsTriggerDown = false;
-                trigger2.IsTriggerDown = false;
-            }
 
-            else if (button_name == "RED")
-            {
-                GameManager.instance.setCh(1);
-                paly_red.GetComponent<Button>().onClick.Invoke();
-                trigger.IsTriggerDown = false;
-                trigger2.IsTriggerDown = false;
-            }
-
-            else if (button_name == "WOLF")
-            {
-                GameManager.instance.setCh(2);
-                paly_wolf.GetComponent<Button>().onClick.Invoke();
-                trigger.IsTriggerDown = false;
-                trigger2.IsTriggerDown = false;
-            }
-
-            else if (button_name == "BACK")
-            {
-                paly_back.GetComponent<Button>().onClick.Invoke();
-                trigger.IsTriggerDown = false;
-                trigger2.IsTriggerDown = false;
-            }
+            if (clickedButton != ClickedButton.NONE) buttons[(int)clickedButton].GetComponent<Button>().onClick.Invoke();
+            trigger.IsTriggerDown = false;
+            trigger2.IsTriggerDown = false;
         }
     }
 
     public void Play_Red()
     {
+        GameManager.instance.setCh(1);
         SceneManager.LoadScene("RedHouse");
     }
 
     public void Play_Wolf()
     {
+        GameManager.instance.setCh(2);
         SceneManager.LoadScene("Forest");
+    }
+
+    public void Play_Courthouse()
+    {
+        SceneManager.LoadScene("Courthouse");
+    }
+
+    public void ChangeLanguage_Korean()
+    {
+        GameManager.instance.language = GameManager.GameLanguage.KR;
+    }
+    
+    public void ChangeLanguage_English()
+    {
+        GameManager.instance.language = GameManager.GameLanguage.EN;
     }
 
     public void QuitGame()
