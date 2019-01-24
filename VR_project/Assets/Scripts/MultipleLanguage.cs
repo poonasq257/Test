@@ -10,6 +10,9 @@ public class MultipleLanguage : MonoBehaviour {
     
     void Awake() {
         textComponent = GetComponent<Text>();
+    }
+
+    void Start() {
         SetLanguage();
     }
 
