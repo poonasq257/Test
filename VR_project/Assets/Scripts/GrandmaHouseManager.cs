@@ -23,16 +23,16 @@ public class GrandmaHouseManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (GameManager.instance.ch == 1)//빨간모자
+        switch (GameManager.instance.Character)
         {
-            redStory.SetActive(true);
-            wolfStory.SetActive(false);
-        }
-
-        if (GameManager.instance.ch == 2)//늑대
-        {
-            wolfStory.SetActive(true);
-            redStory.SetActive(false);
+            case GameManager.PlayableCharacter.Red:
+                redStory.SetActive(true);
+                wolfStory.SetActive(false);
+                break;
+            case GameManager.PlayableCharacter.Wolf: Wolf();
+                wolfStory.SetActive(true);
+                redStory.SetActive(false);
+                break;
         }
 
         if (GameManager.instance.getwhichHandGrap() == 1)
@@ -50,17 +50,11 @@ public class GrandmaHouseManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (GameManager.instance.ch == 1)
+        switch (GameManager.instance.Character)
         {
-            Red();
+            case GameManager.PlayableCharacter.Red: Red(); break;
+            case GameManager.PlayableCharacter.Wolf: Wolf(); break;
         }
-
-        if (GameManager.instance.ch == 2)
-        {
-            Wolf();
-        }
-
     }
 
     void Red()
@@ -129,7 +123,7 @@ public class GrandmaHouseManager : MonoBehaviour {
             {
                 num = 0;
                 num_rock = 0;
-                GameManager.instance.setCh(0);
+                GameManager.instance.SetCharacter("None");
                 GameManager.instance.setwhichHandGrap(0);
                 SceneManager.LoadScene("Title");
             }
@@ -190,7 +184,7 @@ public class GrandmaHouseManager : MonoBehaviour {
                 SteamVR_Fade.Start(Color.clear, 1);
                 num = 0;
                 eatGand = false;
-                GameManager.instance.setCh(0);
+                GameManager.instance.SetCharacter("None");
                 GameManager.instance.setwhichHandGrap(0);
                 SceneManager.LoadScene("Title");
             }

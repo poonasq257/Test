@@ -13,10 +13,23 @@ public class GameManager : MonoBehaviour {
         EN,
     }
 
+    public enum PlayableCharacter
+    {
+        None,
+        Red,
+        Wolf,
+    }
+
     public GameLanguage language = GameLanguage.KR;
-    public int ch = 1;
+    private PlayableCharacter character = PlayableCharacter.Red;
     public bool isSetting = false;
     public int whichHandGrap = 0;
+
+    public PlayableCharacter Character
+    {
+        get { return character; }
+        set { character = value; }
+    }
 
     void Awake()
     {
@@ -47,14 +60,14 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Hello");
     }
 
-    public void setCh(int num)
+    public void SetCharacter(string charName)
     {
-        ch = num;
-    }
-
-    public int getCh()
-    {
-        return ch;
+        switch(charName)
+        {
+            case "None": character = PlayableCharacter.None; break;
+            case "Red": character = PlayableCharacter.Red; break;
+            case "Wolf": character = PlayableCharacter.Wolf; break;
+        }
     }
 
     public void setwhichHandGrap(int num)
@@ -77,4 +90,12 @@ public class GameManager : MonoBehaviour {
         return isSetting;
     }
 
+    public void NextScene()
+    {
+        switch(character)
+        {
+            case PlayableCharacter.Red: SceneManager.LoadScene("RedHouse");break;
+            case PlayableCharacter.Wolf: SceneManager.LoadScene("Forest"); break;
+        }
+    }
 }

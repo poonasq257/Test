@@ -62,7 +62,6 @@ public class MainMenu : MonoBehaviour {
                 default: clickedButton = ClickedButton.NONE; break;
             }
 
-
             if (clickedButton != ClickedButton.NONE) buttons[(int)clickedButton].GetComponent<Button>().onClick.Invoke();
             trigger.IsTriggerDown = false;
             trigger2.IsTriggerDown = false;
@@ -71,14 +70,14 @@ public class MainMenu : MonoBehaviour {
 
     public void Play_Red()
     {
-        GameManager.instance.setCh(1);
-        SceneManager.LoadScene("RedHouse");
+        GameManager.instance.SetCharacter("Red");
+        GameManager.instance.NextScene();
     }
 
     public void Play_Wolf()
     {
-        GameManager.instance.setCh(2);
-        SceneManager.LoadScene("Forest");
+        GameManager.instance.SetCharacter("Wolf");
+        GameManager.instance.NextScene();
     }
 
     public void Play_Courthouse()

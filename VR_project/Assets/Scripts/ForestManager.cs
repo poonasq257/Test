@@ -21,14 +21,13 @@ public class ForestManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-		if(GameManager.instance.ch==1)//빨간모자
+        if (GameManager.instance.Character == GameManager.PlayableCharacter.Red)
         {
             redStory.SetActive(true);
             wolfStory.SetActive(false);
         }
 
-        if (GameManager.instance.ch == 2)//늑대
+        if (GameManager.instance.Character == GameManager.PlayableCharacter.Wolf)
         {
             wolfStory.SetActive(true);
             redStory.SetActive(false);
@@ -50,15 +49,10 @@ public class ForestManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(GameManager.instance.ch == 1)
+        switch(GameManager.instance.Character)
         {
-            Red();
-        }
-
-        if (GameManager.instance.ch == 2)
-        {
-            Wolf();
+            case GameManager.PlayableCharacter.Red: Red(); break;
+            case GameManager.PlayableCharacter.Wolf: Wolf(); break;
         }
     }
 

@@ -98,17 +98,10 @@ public class LaserPointer : MonoBehaviour
         {
             if (target)
             {
-                string objName = target.name;
-                switch (objName)
-                {
-                    case "Red": GameManager.instance.ch = 1; break;
-                    case "Wolf": GameManager.instance.ch = 2; break;
-                }
-                if (target)
-                {
-                    target.GetComponent<Highlighting>().isHighlighted = false;
-                    target = null;
-                }
+                if (GameManager.instance) GameManager.instance.SetCharacter(target.name);
+                target.GetComponent<Highlighting>().isHighlighted = false;
+                target = null;
+                GameManager.instance.NextScene();
             }
             if (shouldTeleport) Teleport();
         }
