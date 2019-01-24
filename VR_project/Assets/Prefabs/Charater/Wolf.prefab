@@ -2453,8 +2453,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1968548441814078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.25}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.23083355, y: 0, z: -1.4290488}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4868764254162960}
@@ -3017,7 +3017,14 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed by
+    Humanoid clips.\n\tTransform 'Bip001 R Clavicle'\n\tTransform 'Bip001 R UpperArm'\n\tTransform
+    'Bip001 Head'\n\tTransform 'Bip001 Spine1'\n\tTransform 'Bip001 L UpperArm'\n\tTransform
+    'Bip001 L Clavicle'\n\tTransform 'Bip001 R Calf'\n\tTransform 'Bip001 L Hand'\n\tTransform
+    'Bip001 Spine'\n\tTransform 'Bip001 R Thigh'\n\tand more ...\n\tFrom animation
+    clip 'wolf_eating'\n\tFrom animation clip 'wolf_eatStart'\n\tFrom animation clip
+    'wolf_sleep'\n\tFrom animation clip 'wolf_sleep_talk'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!137 &137149285824820214
