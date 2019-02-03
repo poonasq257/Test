@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
-
-    public static GameManager instance = null;
+public class GameManager {
+    private static GameManager instance = null;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null) instance = new GameManager();
+            return instance;
+        }
+    }
 
     public enum GameLanguage
     {
@@ -27,19 +34,19 @@ public class GameManager : MonoBehaviour {
 
     public PlayableCharacter Character
     {
-        get { return character; }
-        set { character = value; }
+        get { return instance.character; }
+        set { instance.character = value; }
     }
 
     void Awake()
     {
-        if (instance == null)
-            instance = this;
+        //if (instance == null)
+        //    instance = this;
 
-        else if (instance != this)
-            Destroy(gameObject);
+        //else if (instance != this)
+        //    Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         InitGame();
     }
@@ -52,47 +59,41 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
-
     }
-
-    public void DoHello()
-    {
-        Debug.Log("Hello");
-    }
-
+    
     public void SetCharacter(string charName)
     {
         switch(charName)
         {
-            case "None": character = PlayableCharacter.None; break;
-            case "Red": character = PlayableCharacter.Red; break;
-            case "Wolf": character = PlayableCharacter.Wolf; break;
+            case "None": instance.character = PlayableCharacter.None; break;
+            case "Red": instance.character = PlayableCharacter.Red; break;
+            case "Wolf": instance.character = PlayableCharacter.Wolf; break;
         }
     }
 
     public void setwhichHandGrap(int num)
     {
-        whichHandGrap = num;
+        instance.whichHandGrap = num;
     }
 
     public int getwhichHandGrap()
     {
-        return whichHandGrap;
+        return instance.whichHandGrap;
     }
 
     public void setIsSetting(bool myset)
     {
-        isSetting = myset;
+        instance.isSetting = myset;
     }
 
     public bool getIsSetting()
     {
-        return isSetting;
+        return instance.isSetting;
     }
 
     public void NextScene()
     {
-        switch(character)
+        switch(instance.character)
         {
             case PlayableCharacter.Red: SceneManager.LoadScene("RedHouse");break;
             case PlayableCharacter.Wolf: SceneManager.LoadScene("Forest"); break;
