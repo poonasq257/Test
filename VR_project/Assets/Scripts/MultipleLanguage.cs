@@ -22,7 +22,9 @@ public class MultipleLanguage : MonoBehaviour {
 
     private void SetLanguage()
     {
-        switch (GameManager.Instance.language)
+        if (!GameManager.instance) return;
+
+        switch (GameManager.instance.language)
         {
             case GameManager.GameLanguage.KR: textComponent.text = korean; break;
             case GameManager.GameLanguage.EN: textComponent.text = english; break;
