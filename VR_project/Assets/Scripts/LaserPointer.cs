@@ -66,21 +66,31 @@ public class LaserPointer : MonoBehaviour
         RaycastHit hit;
         if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
         {
-            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, highlightLayerMask))
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100))
             {
                 hitPoint = hit.point;
                 ShowLaser(hit);
 
-                target = hit.collider.gameObject;
-                target.GetComponent<Highlighting>().isHighlighted = true;
-
-                //reticle.SetActive(true);
-                //teleportReticleTransform.position = hitPoint + teleportReticleOffset;
-                //shouldTeleport = true;
+                string layerName = LayerMask.LayerToName(hit.collider.gameObject.layer);
+                LayerMask layer = LayerMask.GetMask(layerName);
+                if (layer == highlightLayerMask)
+                {
+                    target = hit.collider.gameObject;
+                    target.GetComponent<Highlighting>().isHighlighted = true;
+                }
+                else if (layer == teleportLayerMask)
+                {
+                    reticle.SetActive(true);
+                    teleportReticleTransform.position = hitPoint + teleportReticleOffset;
+                    shouldTeleport = true;
+                }
             }
             else
             {
                 laser.SetActive(false);
+                reticle.SetActive(false);
+                shouldTeleport = false;
+
                 if (target)
                 {
                     target.GetComponent<Highlighting>().isHighlighted = false;
@@ -98,10 +108,13 @@ public class LaserPointer : MonoBehaviour
         {
             if (target)
             {
-                if (GameManager.instance) GameManager.instance.SetCharacter(target.name);
+                string objName = target.name;
+
                 target.GetComponent<Highlighting>().isHighlighted = false;
                 target = null;
-                GameManager.instance.NextScene();
+
+                GameManager.Instance.SetCharacter(objName);
+                GameManager.Instance.NextScene();
             }
             if (shouldTeleport) Teleport();
         }

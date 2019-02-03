@@ -25,7 +25,6 @@ public class Grab_Object : MonoBehaviour {
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-
     }
 
     //////////////////////
@@ -113,12 +112,12 @@ public class Grab_Object : MonoBehaviour {
                     if(this.gameObject.tag=="Left")
                     {
                         isGetBasket = true;
-                        GameManager.instance.setwhichHandGrap(1);
+                        GameManager.Instance.setwhichHandGrap(1);
                     }
                     else if (this.gameObject.tag == "Right")
                     {
                         isGetBasket = true;
-                        GameManager.instance.setwhichHandGrap(2);
+                        GameManager.Instance.setwhichHandGrap(2);
                     }
                 }
 
@@ -136,7 +135,6 @@ public class Grab_Object : MonoBehaviour {
                 {
                     isGetBasket = true;
                 }
-
                 else
                 {
                     GrabObject();  // 잡는다!

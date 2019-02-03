@@ -42,7 +42,8 @@ public class MainMenu : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (trigger.IsTriggerDown || trigger2.IsTriggerDown)
         {
             switch (button_name)
@@ -70,14 +71,14 @@ public class MainMenu : MonoBehaviour {
 
     public void Play_Red()
     {
-        GameManager.instance.SetCharacter("Red");
-        GameManager.instance.NextScene();
+        GameManager.Instance.SetCharacter("Red");
+        GameManager.Instance.NextScene();
     }
 
     public void Play_Wolf()
     {
-        GameManager.instance.SetCharacter("Wolf");
-        GameManager.instance.NextScene();
+        GameManager.Instance.SetCharacter("Wolf");
+        GameManager.Instance.NextScene();
     }
 
     public void Play_Courthouse()
@@ -87,12 +88,12 @@ public class MainMenu : MonoBehaviour {
 
     public void ChangeLanguage_Korean()
     {
-        GameManager.instance.language = GameManager.GameLanguage.KR;
+        GameManager.Instance.language = GameManager.GameLanguage.KR;
     }
     
     public void ChangeLanguage_English()
     {
-        GameManager.instance.language = GameManager.GameLanguage.EN;
+        GameManager.Instance.language = GameManager.GameLanguage.EN;
     }
 
     public void QuitGame()
