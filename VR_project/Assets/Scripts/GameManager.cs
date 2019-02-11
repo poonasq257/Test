@@ -25,12 +25,16 @@ public class GameManager {
         None,
         Red,
         Wolf,
+        Grandma,
     }
 
     public GameLanguage language = GameLanguage.KR;
     private PlayableCharacter character = PlayableCharacter.Red;
+    public bool isFreezing = false;
     public bool isSetting = false;
     public int whichHandGrap = 0;
+    public PlayableCharacter[] playedCharacter = new PlayableCharacter[3];
+    public int playTimes = 0;
 
     public PlayableCharacter Character
     {
@@ -38,36 +42,25 @@ public class GameManager {
         set { instance.character = value; }
     }
 
-    void Awake()
+    public void SetCharacter(string tag)
     {
-        //if (instance == null)
-        //    instance = this;
-
-        //else if (instance != this)
-        //    Destroy(gameObject);
-
-        //DontDestroyOnLoad(gameObject);
-
-        InitGame();
-    }
-
-    //Initializes the game for each level.
-    void InitGame()
-    {
-
-    }
-
-    void Update()
-    {
-    }
-    
-    public void SetCharacter(string charName)
-    {
-        switch(charName)
+        switch(tag)
         {
-            case "None": instance.character = PlayableCharacter.None; break;
-            case "Red": instance.character = PlayableCharacter.Red; break;
-            case "Wolf": instance.character = PlayableCharacter.Wolf; break;
+            case "Red":
+                instance.character = PlayableCharacter.Red;
+                instance.playedCharacter[instance.playTimes] = PlayableCharacter.Red;
+                if(instance.playedCharacter.Length > instance.playTimes) instance.playTimes++;
+                break;
+            case "Wolf":
+                instance.character = PlayableCharacter.Wolf;
+                instance.playedCharacter[instance.playTimes] = PlayableCharacter.Wolf;
+                if (instance.playedCharacter.Length > instance.playTimes) instance.playTimes++;
+                break;
+            case "Grandma":
+                instance.character = PlayableCharacter.Grandma;
+                instance.playedCharacter[instance.playTimes] = PlayableCharacter.Grandma;
+                if (instance.playedCharacter.Length > instance.playTimes) instance.playTimes++;
+                break;
         }
     }
 

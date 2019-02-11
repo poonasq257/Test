@@ -35,3 +35,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+VR_project/Assets/Prefabs/Charater/playerVR.prefab
+*.prefab
+VR_project/Assets/Animations/TitleCanvas.prefab
+VR_project/Assets/Animations/TitleCanvas.prefab.meta

@@ -12,115 +12,121 @@ public class ForestManager : MonoBehaviour {
     public GameObject b_left;
     public GameObject b_right;
 
-    //public GameObject[] Scene;
-    //public GameObject[] Moves;
-    //public GameObject wolfStory;
-    //public GameObject redStory;
+    public GameObject[] redScenes;
+    public GameObject[] wolfScenes;
+    private int sceneNum;
 
-    public int num=0;
+    public GameObject redStory;
+    public GameObject wolfStory;
+
+    private GameObject movePoint;
+    private int moveNum;
+    public Transform[] movePositions_red;
+    public Transform[] movePositions_wolf;
 
     // Use this for initialization
-    void Start () {
-        //if (GameManager.Instance.Character == GameManager.PlayableCharacter.Red)
-        //{
-        //    redStory.SetActive(true);
-        //    wolfStory.SetActive(false);
-        //}
+    void Start ()
+    {
+        sceneNum = 0;
+        moveNum = 0;
 
-        //if (GameManager.Instance.Character == GameManager.PlayableCharacter.Wolf)
-        //{
-        //    wolfStory.SetActive(true);
-        //    redStory.SetActive(false);
-        //}
-        Debug.Log(GameManager.Instance.getwhichHandGrap());
+        if (GameManager.Instance.Character == GameManager.PlayableCharacter.Red)
+        {
+            redStory.SetActive(true);
+            wolfStory.SetActive(false);
+            movePoint = redStory.transform.Find("Move Point").gameObject;
+            movePoint.transform.localPosition = movePositions_red[sceneNum].localPosition;
+        }
+        else if (GameManager.Instance.Character == GameManager.PlayableCharacter.Wolf)
+        {
+            wolfStory.SetActive(true);
+            redStory.SetActive(false);
+            movePoint = wolfStory.transform.Find("Move Point").gameObject;
+            movePoint.transform.localPosition = movePositions_wolf[sceneNum].localPosition;
+        }
+
         if(GameManager.Instance.getwhichHandGrap() == 1)
         {
             b_left.SetActive(true);
             con_left.GetComponent<Grab_Object>().isGetBasket = true;
-            con_left.GetComponent<LaserPointer>().enabled = false;
         }
-
-        if (GameManager.Instance.getwhichHandGrap() == 2)
+        else if (GameManager.Instance.getwhichHandGrap() == 2)
         {
             b_right.SetActive(true);
             con_right.GetComponent<Grab_Object>().isGetBasket = true;
-            con_right.GetComponent<LaserPointer>().enabled = false;
         }
-
     }
 	
 	// Update is called once per frame
-	void Update () {
-        //switch(GameManager.Instance.Character)
-        //{
-        //    case GameManager.PlayableCharacter.Red: Red(); break;
-        //    case GameManager.PlayableCharacter.Wolf: Wolf(); break;
-        //}
+	void Update ()
+    {
+        if (redStory.activeSelf) Red();
+        else if (wolfStory.activeSelf) Wolf();
     }
 
-    //void Red()
-    //{
-    //    if (num == 0 && Moves[0].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //    {
-    //        Scene[0].SetActive(true);
-    //        if (Scene[0].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 1;
-    //        }
-    //    }
-    //    else if (num == 1)
-    //    {
-    //        Scene[2].SetActive(true);
-    //        if (Scene[2].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 2;
-    //        }
-    //    }
-    //    else if (num == 2)
-    //    {
-    //        Moves[1].SetActive(true);
-    //        if (Moves[1].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 3;
-    //        }
-    //    }
-    //    else if (num == 3)
-    //    {
-    //        Scene[4].SetActive(true);
-    //        if (Scene[4].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 0;
-    //            SceneManager.LoadScene("GrandmaHouse");
-    //        }
-    //    }
-    //}
+    void Red()
+    {
+        if (movePoint.activeSelf)
+        {
+            if (movePoint.GetComponent<CheckCollision>().isColliding)
+            {
+                redStory.transform.Find("Wolf").gameObject.SetActive(true);
+                movePoint.SetActive(false);
+                GameManager.Instance.isFreezing = true;
+            }
+            else return;
+        }
 
-    //void Wolf()
-    //{
-    //    if (num == 0 && Scene[5].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //    {
-    //        Scene[6].SetActive(true);
-    //        if (Scene[6].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 1;
-    //        }
-    //    }
-    //    if(num==1)
-    //    {
-    //        Scene[7].SetActive(true);
-    //        if (Scene[7].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 2;
-    //        }
-    //    }
-    //    if(num==2)
-    //    {
-    //        Scene[8].SetActive(true);
-    //        if (Scene[8].GetComponent<PlayableDirector>().state != PlayState.Playing)
-    //        {
-    //            num = 0;
-    //            SceneManager.LoadScene("GrandmaHouse");
-    //        }
-    //    }
-    //}
+        if (redScenes.Length <= sceneNum)
+        {
+            SceneManager.LoadScene("GrandmaHouse");
+            return;
+        }
+
+        redScenes[sceneNum].SetActive(true);
+        if(redScenes[sceneNum].GetComponent<PlayableDirector>().state != PlayState.Playing)
+        {
+            redScenes[sceneNum].SetActive(false);
+            GameManager.Instance.isFreezing = false;
+            ++sceneNum;
+
+            if (movePositions_red.Length <= moveNum) return;
+            movePoint.transform.localPosition = movePositions_red[++moveNum].localPosition;
+            movePoint.SetActive(true);
+        }
+    }
+
+    void Wolf()
+    {
+        if (movePoint.activeSelf)
+        {
+            if (movePoint.GetComponent<CheckCollision>().isColliding)
+            {
+                wolfStory.transform.Find("RedHood").gameObject.SetActive(true);
+                movePoint.SetActive(false);
+                GameManager.Instance.isFreezing = true;
+            }
+            else return;
+        }
+
+        if (wolfScenes.Length <= sceneNum)
+        {
+            SceneManager.LoadScene("GrandmaHouse");
+            return;
+        }
+
+        wolfScenes[sceneNum].SetActive(true);
+        if (wolfScenes[sceneNum].GetComponent<PlayableDirector>().state != PlayState.Playing)
+        {
+            if (sceneNum == 0 || sceneNum == 2)
+            {
+                if (movePositions_wolf.Length <= moveNum) return;
+                movePoint.transform.localPosition = movePositions_wolf[moveNum++].localPosition;
+                movePoint.SetActive(true);
+                GameManager.Instance.isFreezing = false;
+            }
+            wolfScenes[sceneNum].SetActive(false);
+            ++sceneNum;
+        }
+    }
 }

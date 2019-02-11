@@ -20,6 +20,8 @@ TagManager:
   - Grandma
   - ExcludeTeleport
   - TeleportIgnore
+  - Wolf
+  - Red
   layers:
   - Default
   - TransparentFX
@@ -31,7 +33,7 @@ TagManager:
   - 
   - CanTeleport
   - CanHighlight
-  - 
+  - Wall
   - 
   - 
   - 

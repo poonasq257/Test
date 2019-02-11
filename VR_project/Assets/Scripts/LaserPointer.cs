@@ -23,6 +23,8 @@ public class LaserPointer : MonoBehaviour
     private bool shouldTeleport;
     public LayerMask teleportLayerMask;
 
+    private Grab_Object grabObj;
+
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
@@ -31,6 +33,7 @@ public class LaserPointer : MonoBehaviour
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        grabObj = GetComponent<Grab_Object>();
     }
 
     private void ShowLaser(RaycastHit hit)
@@ -56,13 +59,15 @@ public class LaserPointer : MonoBehaviour
         shouldTeleport = false;
         reticle.SetActive(false);
         Vector3 difference = cameraRigTransform.position - headTransform.position;
-        difference.y = 0;
+        difference.y = cameraRigTransform.position.y;
         cameraRigTransform.position = hitPoint + difference;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.isFreezing || grabObj.isGetBasket) return;
+
         RaycastHit hit;
         if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
         {
@@ -75,8 +80,24 @@ public class LaserPointer : MonoBehaviour
                 LayerMask layer = LayerMask.GetMask(layerName);
                 if (layer == highlightLayerMask)
                 {
-                    target = hit.collider.gameObject;
-                    target.GetComponent<Highlighting>().isHighlighted = true;
+                    if ((GameManager.Instance.playTimes < 2 && hit.collider.tag != "Grandma")
+                        || (GameManager.Instance.playTimes >= 2 && hit.collider.tag == "Grandma"))
+                    {
+                        if(GameManager.Instance.playTimes == 1)
+                        {
+                            if ((GameManager.Instance.playedCharacter[0] == GameManager.PlayableCharacter.Red && hit.collider.tag == "Wolf")
+                                || (GameManager.Instance.playedCharacter[0] == GameManager.PlayableCharacter.Wolf && hit.collider.tag == "Red"))
+                            {
+                                target = hit.collider.gameObject;
+                                target.GetComponent<Highlighting>().isHighlighted = true;
+                            } 
+                        }
+                        else
+                        {
+                            target = hit.collider.gameObject;
+                            target.GetComponent<Highlighting>().isHighlighted = true;
+                        }
+                    }
                 }
                 else if (layer == teleportLayerMask)
                 {
@@ -108,12 +129,12 @@ public class LaserPointer : MonoBehaviour
         {
             if (target)
             {
-                string objName = target.name;
+                string objTag = target.tag;
 
                 target.GetComponent<Highlighting>().isHighlighted = false;
                 target = null;
 
-                GameManager.Instance.SetCharacter(objName);
+                GameManager.Instance.SetCharacter(objTag);
                 GameManager.Instance.NextScene();
             }
             if (shouldTeleport) Teleport();
