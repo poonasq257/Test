@@ -5,31 +5,45 @@ using UnityEngine.UI;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class GrandmaHouseManager : MonoBehaviour {
-
+public class GrandmaHouseManager : MonoBehaviour
+{
+    public GameObject player;
     public GameObject con_left;
     public GameObject con_right;
     public GameObject b_left;
     public GameObject b_right;
 
-    public GameObject[] Scene;
-    public GameObject[] Moves;
-    public GameObject wolfStory;
     public GameObject redStory;
+    public GameObject wolfStory;
+    public GameObject[] grannyHome_red;
+    public GameObject[] grannyHome_wolf;
 
-    public int num = 0;
-    public int num_rock = 0;
-    public bool eatGand = false;
+    public GameObject[] rocks;
+    public GameObject door;
+
+    public GameObject movePoint;
+    private int moveNum;
+    public Transform[] movePositions_red;
+    public Transform[] movePositions_wolf;
+    
+    public int sceneNum;
+    public int num_rock;
+    public bool eatGrand;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+        sceneNum = 0;
+        num_rock = 0;
+        eatGrand = false;
+
         switch (GameManager.Instance.Character)
         {
             case GameManager.PlayableCharacter.Red:
                 redStory.SetActive(true);
                 wolfStory.SetActive(false);
                 break;
-            case GameManager.PlayableCharacter.Wolf: Wolf();
+            case GameManager.PlayableCharacter.Wolf:
                 wolfStory.SetActive(true);
                 redStory.SetActive(false);
                 break;
@@ -47,9 +61,10 @@ public class GrandmaHouseManager : MonoBehaviour {
             con_right.GetComponent<Grab_Object>().isGetBasket = true;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         switch (GameManager.Instance.Character)
         {
             case GameManager.PlayableCharacter.Red: Red(); break;
@@ -59,135 +74,157 @@ public class GrandmaHouseManager : MonoBehaviour {
 
     void Red()
     {
-        if (num == 0 && Moves[0].GetComponent<PlayableDirector>().state != PlayState.Playing)
+        if (sceneNum == 0)
         {
-            Scene[0].SetActive(true);
-            if (Scene[0].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            movePoint.SetActive(true);
+            if (movePoint.GetComponent<CheckCollision>().isColliding)
             {
-                num = 1;
-                SteamVR_Fade.Start(Color.black, 0);
-                b_left.SetActive(false);
-                b_right.SetActive(false);
-                con_left.GetComponent<Grab_Object>().isGetBasket = false;
-                con_right.GetComponent<Grab_Object>().isGetBasket = false;
-            }
-        }
-        else if (num == 1)
-        {
-            Scene[1].SetActive(true);
-            if (Scene[1].GetComponent<PlayableDirector>().state != PlayState.Playing)
-            {
-                SteamVR_Fade.Start(Color.clear, 1);
-                num = 2;
-            }
-        }
-        else if (num == 2)
-        {
-            Scene[2].SetActive(true);
-            if (Scene[2].GetComponent<PlayableDirector>().state != PlayState.Playing)
-            {
-                num = 3;
-            }
-        }
-        else if (num == 3)
-        {
-            Moves[1].SetActive(true);
-            if (Scene[1].GetComponent<PlayableDirector>().state != PlayState.Playing)
-            {
-                num = 4;
-            }
-        }
-        else if (num == 4)
-        {
-            if (num_rock == 1)
-            {
-                Scene[3].SetActive(true);
-                if (Scene[3].GetComponent<PlayableDirector>().state != PlayState.Playing)
+                GameManager.Instance.isFreezing = true;
+                movePoint.SetActive(false);
+                grannyHome_red[0].SetActive(true);
+                if (grannyHome_red[0].GetComponent<PlayableDirector>().state != PlayState.Playing)
                 {
-                    num = 5;
+                    SteamVR_Fade.Start(Color.black, 0.0f);
+                    sceneNum = 1;
                 }
             }
         }
-        else if (num == 5)
+        else if (sceneNum == 1)
         {
-            Moves[2].SetActive(true);
-            if (Moves[2].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            grannyHome_red[1].SetActive(true);
+            if (grannyHome_red[1].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                num = 6;
+                player.transform.localPosition = movePositions_red[0].localPosition;
+                SteamVR_Fade.Start(Color.clear, 0.0f);
+                sceneNum = 2;
             }
         }
-        else if (num == 6)
+        else if (sceneNum == 2)
         {
-            Scene[4].SetActive(true);
-            if (Scene[4].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            grannyHome_red[2].SetActive(true);
+            if (grannyHome_red[2].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                num = 0;
-                num_rock = 0;
-                GameManager.Instance.SetCharacter("None");
+                foreach(GameObject obj in rocks)
+                {
+                    obj.SetActive(true);
+                }
+                if (num_rock == 3)
+                {
+                    sceneNum = 3;
+                }
+            }
+        }
+        else if (sceneNum == 3)
+        {
+            grannyHome_red[3].SetActive(true);
+            if (grannyHome_red[3].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            {
+                GameManager.Instance.isFreezing = false;
+                movePoint.transform.localPosition = movePositions_red[1].localPosition;
+                movePoint.SetActive(true);
+                if (movePoint.GetComponent<CheckCollision>().isColliding)
+                {
+                    GameManager.Instance.isFreezing = true;
+                    movePoint.SetActive(false);
+                    sceneNum = 4;
+                }
+            }
+        }
+        else if (sceneNum == 4)
+        {
+            grannyHome_red[4].SetActive(true);
+            if (grannyHome_red[4].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            {
+                GameManager.Instance.isFreezing = false;
                 GameManager.Instance.setwhichHandGrap(0);
-                SceneManager.LoadScene("Title");
+                SceneManager.LoadScene("CourtHouse");
             }
         }
     }
 
     void Wolf()
     {
-        if (num == 0 && Scene[5].GetComponent<PlayableDirector>().state != PlayState.Playing)
+        if (sceneNum == 0)
         {
-            num = 1;
-        }
-        else if(num ==1)
-        {
-            if(eatGand==true)
+            grannyHome_wolf[0].SetActive(true);
+            GameManager.Instance.isFreezing = true;
+            if(grannyHome_wolf[0].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                Moves[3].SetActive(true);
-
-                if (Moves[3].GetComponent<PlayableDirector>().state != PlayState.Playing)
+                GameManager.Instance.isFreezing = false;
+                sceneNum = 1;
+            }
+        }
+        else if (sceneNum == 1)
+        {
+            if (eatGrand == true)
+            {
+                movePoint.SetActive(true);
+                if(movePoint.GetComponent<CheckCollision>().isColliding == true)
                 {
-                    num = 2;
+                    SteamVR_Fade.Start(Color.black, 0.0f);
+                    SteamVR_Fade.Start(Color.clear, 1.0f);
+                    movePoint.SetActive(false);
+                    player.transform.localPosition = movePositions_wolf[0].localPosition;
+                    player.transform.localRotation = movePositions_wolf[0].localRotation;
+                    sceneNum = 2;
                 }
             }
         }
-        else if(num==2)
+        else if (sceneNum == 2)
         {
-            Scene[6].SetActive(true);
-            if (Scene[6].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            grannyHome_wolf[1].SetActive(true);
+            GameManager.Instance.isFreezing = true;
+            if (grannyHome_wolf[1].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                num = 3;
+                SteamVR_Fade.Start(Color.black, 2.0f);
+                SteamVR_Fade.Start(Color.clear, 1.0f);
+                sceneNum = 3;
             }
         }
-        else if(num==3)
+        else if (sceneNum == 3)
         {
-            Moves[4].SetActive(true);
-            SteamVR_Fade.Start(Color.black, 0);
-            if (Moves[4].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            grannyHome_wolf[2].SetActive(true);
+            GameManager.Instance.isFreezing = true;
+            if (grannyHome_wolf[2].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                 SteamVR_Fade.Start(Color.clear, 1);
-                num = 4;
+                GameManager.Instance.isFreezing = false;
+                movePoint.SetActive(true);
+                movePoint.transform.localPosition = movePositions_wolf[1].localPosition;
+                if(door.GetComponent<CheckCollision>().isColliding)
+                {
+                    door.GetComponent<PlayableDirector>().Play();
+                    movePoint.transform.localPosition = movePositions_wolf[2].localPosition;
+                    sceneNum = 4;
+                }
             }
         }
-
-        else if (num == 4)
+        else if (sceneNum == 4)
         {
-            Scene[7].SetActive(true);
-            if (Scene[7].GetComponent<PlayableDirector>().state != PlayState.Playing)
+            if (door.GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                num = 5;
+                if (movePoint.GetComponent<CheckCollision>().isColliding)
+                {
+                    movePoint.SetActive(false);
+                    SteamVR_Fade.Start(Color.black, 1.0f);
+                    SteamVR_Fade.Start(Color.clear, 1.0f);
+                    GameManager.Instance.setwhichHandGrap(0);
+                    SceneManager.LoadScene("CourtHouse");
+                }
             }
         }
-        else if(num==5)
-        {
-            Moves[5].SetActive(true);
-            SteamVR_Fade.Start(Color.black, 0);
-            if (Moves[5].GetComponent<PlayableDirector>().state != PlayState.Playing)
-            {
-                SteamVR_Fade.Start(Color.clear, 1);
-                num = 0;
-                eatGand = false;
-                GameManager.Instance.SetCharacter("None");
-                GameManager.Instance.setwhichHandGrap(0);
-                SceneManager.LoadScene("Title");
-            }
-        }
+        //else if (num == 5)
+        //{
+        //    Moves[5].SetActive(true);
+        //    SteamVR_Fade.Start(Color.black, 0);
+        //    if (Moves[5].GetComponent<PlayableDirector>().state != PlayState.Playing)
+        //    {
+        //        SteamVR_Fade.Start(Color.clear, 1);
+        //        num = 0;
+        //        eatGand = false;
+        //        GameManager.Instance.SetCharacter("None");
+        //        GameManager.Instance.setwhichHandGrap(0);
+        //        SceneManager.LoadScene("Title");
+        //    }
+        //}
     }
 }

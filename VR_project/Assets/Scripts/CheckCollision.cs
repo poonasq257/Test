@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckCollision : MonoBehaviour {
-    public GameObject targetObj;
+    public string targetTag;
     public bool isColliding;
 
     void Start()
@@ -21,9 +21,25 @@ public class CheckCollision : MonoBehaviour {
         isColliding = false;
     }
 
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.collider.tag == targetTag)
+        {
+            isColliding = true;
+        }
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.collider.tag == targetTag)
+        {
+            isColliding = false;
+        }
+    }
+
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == targetObj.tag)
+        if (collider.tag == targetTag)
         {
             isColliding = true;
         }
@@ -31,7 +47,7 @@ public class CheckCollision : MonoBehaviour {
 
     void OnTriggerExit(Collider collider)
     {
-        if (collider.tag == targetObj.tag)
+        if (collider.tag == targetTag)
         {
             isColliding = false;
         }

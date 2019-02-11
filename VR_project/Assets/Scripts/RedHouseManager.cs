@@ -28,7 +28,7 @@ public class RedHouseManager : MonoBehaviour
         if (con_left.GetComponent<Grab_Object>().isGetBasket == true
             || con_right.GetComponent<Grab_Object>().isGetBasket == true)
         {
-            if (col.tag == "Left" || col.tag == "Right")
+            if (col.tag == "hands")
             {
                 GetComponent<PlayableDirector>().Play();
                 isEnd = true;

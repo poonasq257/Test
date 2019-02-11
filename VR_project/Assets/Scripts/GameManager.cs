@@ -29,7 +29,7 @@ public class GameManager {
     }
 
     public GameLanguage language = GameLanguage.KR;
-    private PlayableCharacter character = PlayableCharacter.Red;
+    private PlayableCharacter character = PlayableCharacter.Wolf;
     public bool isFreezing = false;
     public bool isSetting = false;
     public int whichHandGrap = 0;
