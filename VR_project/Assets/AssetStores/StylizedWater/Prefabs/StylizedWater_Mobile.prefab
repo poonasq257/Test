@@ -132,9 +132,9 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  waterShallowColor: {r: 0.41911757, g: 1, b: 0.8798174, a: 1}
+  waterShallowColor: {r: 0.4191137, g: 1, b: 0.8798174, a: 1}
   depth: 13
-  waterColor: {r: 0.1176471, g: 0.6348885, b: 1, a: 0}
+  waterColor: {r: 0.117643215, g: 0.63488847, b: 1, a: 0}
   fresnelColor: {r: 0.5, g: 0.8551724, b: 1, a: 0.084}
   fresnel: 2.6
   rimColor: {r: 1, g: 1, b: 1, a: 0.509}
@@ -146,7 +146,7 @@ MonoBehaviour:
   tilingMethodNames:
   - Mesh UV
   - World-aligned (planar)
-  worldSpaceTiling: 0
+  worldSpaceTiling: 1
   refractionAmount: 0.057
   enableNormalMap: 0
   normalStrength: 0.15
@@ -263,7 +263,7 @@ MonoBehaviour:
   isMobileAdvanced: 1
   isMobilePlatform: 0
   isMobileBasic: 0
-  shaderName: StylizedWater/Mobile Advanced
+  shaderName: StylizedWater/Mobile
   isWaterLayer: 1
   hasShaderParams: 1
   hasMaterial: 1
