@@ -49,17 +49,17 @@ public class GameManager {
             case "Red":
                 instance.character = PlayableCharacter.Red;
                 instance.playedCharacter[instance.playTimes] = PlayableCharacter.Red;
-                if(playedCharacter.Length > instance.playTimes) instance.playTimes++;
+                if(instance.playedCharacter.Length > instance.playTimes) instance.playTimes++;
                 break;
             case "Wolf":
                 instance.character = PlayableCharacter.Wolf;
                 instance.playedCharacter[instance.playTimes] = PlayableCharacter.Wolf;
-                if (playedCharacter.Length > instance.playTimes) instance.playTimes++;
+                if (instance.playedCharacter.Length > instance.playTimes) instance.playTimes++;
                 break;
             case "Grandma":
                 instance.character = PlayableCharacter.Grandma;
                 instance.playedCharacter[instance.playTimes] = PlayableCharacter.Grandma;
-                if (playedCharacter.Length > instance.playTimes) instance.playTimes++;
+                if (instance.playedCharacter.Length > instance.playTimes) instance.playTimes++;
                 break;
         }
     }

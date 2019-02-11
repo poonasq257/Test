@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class test : MonoBehaviour {
-    public int times;
-    public GameManager.PlayableCharacter character;
+    public bool court = false;
 
 	// Use this for initialization
 	void Start ()
@@ -15,9 +15,10 @@ public class test : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        GameManager.Instance.Character = character;
-        GameManager.Instance.playTimes = times;
-        Debug.Log(GameManager.Instance.Character);
-        Debug.Log(GameManager.Instance.playTimes);
+        if(court == true)
+        {
+            SceneManager.LoadScene("CourtHouse");
+            court = false;
+        }
 	}
 }

@@ -81,10 +81,18 @@ public class LaserPointer : MonoBehaviour
                 if (layer == highlightLayerMask)
                 {
                     if ((GameManager.Instance.playTimes < 2 && hit.collider.tag != "Grandma")
-                        || ( GameManager.Instance.playTimes == 2 && hit.collider.tag == "Grandma")) 
+                        || (GameManager.Instance.playTimes >= 2 && hit.collider.tag == "Grandma"))
                     {
-                        if (GameManager.Instance.playedCharacter[GameManager.Instance.playTimes]
-                        == GameManager.PlayableCharacter.None)
+                        if(GameManager.Instance.playTimes == 1)
+                        {
+                            if ((GameManager.Instance.playedCharacter[0] == GameManager.PlayableCharacter.Red && hit.collider.tag == "Wolf")
+                                || (GameManager.Instance.playedCharacter[0] == GameManager.PlayableCharacter.Wolf && hit.collider.tag == "Red"))
+                            {
+                                target = hit.collider.gameObject;
+                                target.GetComponent<Highlighting>().isHighlighted = true;
+                            } 
+                        }
+                        else
                         {
                             target = hit.collider.gameObject;
                             target.GetComponent<Highlighting>().isHighlighted = true;
@@ -121,12 +129,12 @@ public class LaserPointer : MonoBehaviour
         {
             if (target)
             {
-                string objName = target.name;
+                string objTag = target.tag;
 
                 target.GetComponent<Highlighting>().isHighlighted = false;
                 target = null;
 
-                GameManager.Instance.SetCharacter(objName);
+                GameManager.Instance.SetCharacter(objTag);
                 GameManager.Instance.NextScene();
             }
             if (shouldTeleport) Teleport();
