@@ -73,6 +73,7 @@ public class LaserPointer : MonoBehaviour
         {
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100))
             {
+                Debug.Log(hit.collider.name);
                 hitPoint = hit.point;
                 ShowLaser(hit);
 

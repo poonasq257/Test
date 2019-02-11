@@ -30,6 +30,8 @@ public class GrandmaHouseManager : MonoBehaviour
     public int num_rock;
     public bool eatGrand;
 
+    private bool isFadeInOut = false;
+
     // Use this for initialization
     void Start()
     {
@@ -108,7 +110,7 @@ public class GrandmaHouseManager : MonoBehaviour
                 {
                     obj.SetActive(true);
                 }
-                if (num_rock == 3)
+                if (num_rock == 1)
                 {
                     sceneNum = 3;
                 }
@@ -161,8 +163,8 @@ public class GrandmaHouseManager : MonoBehaviour
                 movePoint.SetActive(true);
                 if(movePoint.GetComponent<CheckCollision>().isColliding == true)
                 {
-                    SteamVR_Fade.Start(Color.black, 0.0f);
-                    SteamVR_Fade.Start(Color.clear, 1.0f);
+                    FadeIn();
+                    Invoke("FadeOut", 0.5f);
                     movePoint.SetActive(false);
                     player.transform.localPosition = movePositions_wolf[0].localPosition;
                     player.transform.localRotation = movePositions_wolf[0].localRotation;
@@ -176,23 +178,23 @@ public class GrandmaHouseManager : MonoBehaviour
             GameManager.Instance.isFreezing = true;
             if (grannyHome_wolf[1].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
-                SteamVR_Fade.Start(Color.black, 2.0f);
-                SteamVR_Fade.Start(Color.clear, 1.0f);
+                FadeIn();
+                Invoke("FadeOut", 3.0f);
                 sceneNum = 3;
             }
         }
         else if (sceneNum == 3)
         {
-            grannyHome_wolf[2].SetActive(true);
+            if(!isFadeInOut) grannyHome_wolf[2].SetActive(true);
             GameManager.Instance.isFreezing = true;
             if (grannyHome_wolf[2].GetComponent<PlayableDirector>().state != PlayState.Playing)
             {
                 GameManager.Instance.isFreezing = false;
                 movePoint.SetActive(true);
                 movePoint.transform.localPosition = movePositions_wolf[1].localPosition;
-                if(door.GetComponent<CheckCollision>().isColliding)
+                if (movePoint.GetComponent<CheckCollision>().isColliding)
                 {
-                    door.GetComponent<PlayableDirector>().Play();
+                    //door.GetComponent<PlayableDirector>().Play();
                     movePoint.transform.localPosition = movePositions_wolf[2].localPosition;
                     sceneNum = 4;
                 }
@@ -212,19 +214,17 @@ public class GrandmaHouseManager : MonoBehaviour
                 }
             }
         }
-        //else if (num == 5)
-        //{
-        //    Moves[5].SetActive(true);
-        //    SteamVR_Fade.Start(Color.black, 0);
-        //    if (Moves[5].GetComponent<PlayableDirector>().state != PlayState.Playing)
-        //    {
-        //        SteamVR_Fade.Start(Color.clear, 1);
-        //        num = 0;
-        //        eatGand = false;
-        //        GameManager.Instance.SetCharacter("None");
-        //        GameManager.Instance.setwhichHandGrap(0);
-        //        SceneManager.LoadScene("Title");
-        //    }
-        //}
+    }
+
+    private void FadeIn()
+    {
+        isFadeInOut = true;
+        SteamVR_Fade.Start(Color.black, 0.0f);
+    }
+
+    private void FadeOut()
+    {
+        isFadeInOut = false;
+        SteamVR_Fade.Start(Color.clear, 1.0f);
     }
 }

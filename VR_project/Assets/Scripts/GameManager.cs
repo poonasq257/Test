@@ -29,7 +29,7 @@ public class GameManager {
     }
 
     public GameLanguage language = GameLanguage.KR;
-    private PlayableCharacter character = PlayableCharacter.Wolf;
+    private PlayableCharacter character = PlayableCharacter.Red;
     public bool isFreezing = false;
     public bool isSetting = false;
     public int whichHandGrap = 0;
@@ -90,6 +90,7 @@ public class GameManager {
         {
             case PlayableCharacter.Red: SceneManager.LoadScene("RedHouse");break;
             case PlayableCharacter.Wolf: SceneManager.LoadScene("Forest"); break;
+            case PlayableCharacter.Grandma: SceneManager.LoadScene("FlashBack"); break;
         }
     }
 }
